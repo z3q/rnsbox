@@ -1,0 +1,17 @@
+# RNSBox Pi Zero 2 W — headless: USB-C = NCM gadget LAN, PL011 = SLIP (bt off).
+# start_cd: cut-down firmware — the full start.elf silently enforces a
+# ~128 MB GPU floor (ARM sees only 384 MB); the HDMI console still works.
+start_file=start_cd.elf
+fixup_file=fixup_cd.dat
+
+kernel=Image
+arm_64bit=1
+disable_overscan=1
+gpu_mem=16
+# ACT LED: heartbeat = the "alive" pulse (default actpwr burns constantly)
+dtparam=act_led_trigger=heartbeat
+enable_uart=1
+dtoverlay=disable-bt
+dtoverlay=dwc2,dr_mode=peripheral
+# Optional DS3231 RTC: SDA=GPIO2 (pin 3), SCL=GPIO3 (pin 5), 3.3 V
+dtoverlay=i2c-rtc,ds3231

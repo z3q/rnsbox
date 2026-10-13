@@ -1,0 +1,3 @@
+# pinned to the latest at port time (2026-09-26); build.sh re-pins to the
+# PyPI latest at build time when reachable, and pre-seeds the dl cache.
+sha256  578508ef08dedf7c109f73a445065ca89c50a63c6a69ced7b147ed20391ceb15  rns-1.5.4.tar.gz
